@@ -22,5 +22,5 @@ func handle(req Request) (interface{}, error) {
 		return nil, err
 	}
 
-	return json, nil
+	return json.String(), nil
 }
