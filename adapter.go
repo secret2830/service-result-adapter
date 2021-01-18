@@ -8,8 +8,8 @@ import (
 )
 
 type Request struct {
-	FieldName string      `json:"field_name"`
-	Result    interface{} `json:"result"`
+	ResultField string      `json:"result_field"`
+	Result      interface{} `json:"result"`
 }
 
 func handle(req Request) (interface{}, error) {
@@ -17,7 +17,7 @@ func handle(req Request) (interface{}, error) {
 
 	json := models.JSON{}
 
-	json, err := json.Add(req.FieldName, fmt.Sprintf("%v", req.Result))
+	json, err := json.Add(req.ResultField, fmt.Sprintf("%v", req.Result))
 	if err != nil {
 		return nil, err
 	}

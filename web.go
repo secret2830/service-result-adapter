@@ -65,7 +65,7 @@ type JobReq struct {
 func validateRequest(t *JobReq) error {
 	validations := []int{
 		len(t.JobID),
-		len(t.Data.FieldName),
+		len(t.Data.ResultField),
 	}
 
 	for _, v := range validations {
